@@ -67,7 +67,7 @@ def clean_data(df):
 
 def get_engine(database_filename):
     """Return database engine given database filename."""
-    return create_engine(r'sqlite:///{database_filename}')
+    return create_engine(f'sqlite:///{database_filename}')
 
 def save_data(df, engine):
     """Save the specified DataFrame as table 'CategorizedMessages' to specified database `engine`."""
@@ -102,6 +102,7 @@ def main():
               'disaster_messages.csv disaster_categories.csv '\
               'DisasterResponse.db')
 
-
-if __name__ == '__main__':
+# Run main() only when the generated python file is run as a script
+# IN_TEST environment variable is set during nbdev notebook test; do not execute during test
+if __name__ == '__main__' and not os.environ.get('IN_TEST'):
     main()
