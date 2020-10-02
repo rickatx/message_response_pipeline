@@ -1,6 +1,7 @@
 {
   "message_response_pipeline": {
     "Overview": "/",
-    "Disaster Response ETL Pipeline": "ETL_Pipeline_Preparation.html"
+    "Disaster Response ETL Pipeline": "ETL_Pipeline_Preparation.html",
+    "ML Pipeline Preparation": "ML Pipeline Preparation.html"
   }
 }
