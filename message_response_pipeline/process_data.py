@@ -3,6 +3,7 @@
 __all__ = ['load_data', 'clean_data', 'get_engine', 'save_data']
 
 # Cell
+
 import numpy as np
 import pandas as pd
 from sqlalchemy import create_engine
@@ -73,36 +74,3 @@ def save_data(df, engine):
     """Save the specified DataFrame as table 'CategorizedMessages' to specified database `engine`."""
     with engine.connect() as connection:
         df.to_sql('CategorizedMessages', connection, index=False, if_exists='replace')
-
-# Internal Cell
-
-def main():
-    if len(sys.argv) == 4:
-
-        messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
-
-        print('Loading data...\n    MESSAGES: {}\n    CATEGORIES: {}'
-              .format(messages_filepath, categories_filepath))
-        df = load_data(messages_filepath, categories_filepath)
-
-        print('Cleaning data...')
-        df = clean_data(df)
-
-        print('Saving data...\n    DATABASE: {}'.format(database_filepath))
-        engine = get_engine(database_filepath)
-        save_data(df, engine)
-
-        print('Cleaned data saved to database!')
-
-    else:
-        print('Please provide the filepaths of the messages and categories '\
-              'datasets as the first and second argument respectively, as '\
-              'well as the filepath of the database to save the cleaned data '\
-              'to as the third argument. \n\nExample: python process_data.py '\
-              'disaster_messages.csv disaster_categories.csv '\
-              'DisasterResponse.db')
-
-# Run main() only when the generated python file is run as a script
-# IN_TEST environment variable is set during nbdev notebook test; do not execute during test
-if __name__ == '__main__' and not os.environ.get('IN_TEST'):
-    main()

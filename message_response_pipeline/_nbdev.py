@@ -5,8 +5,7 @@ __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 index = {"load_data": "ETL_Pipeline_Preparation.ipynb",
          "clean_data": "ETL_Pipeline_Preparation.ipynb",
          "get_engine": "ETL_Pipeline_Preparation.ipynb",
-         "save_data": "ETL_Pipeline_Preparation.ipynb",
-         "main": "ETL_Pipeline_Preparation.ipynb"}
+         "save_data": "ETL_Pipeline_Preparation.ipynb"}
 
 modules = ["process_data.py"]
 
