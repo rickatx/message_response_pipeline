@@ -2338,13 +2338,6 @@ test_save.db
     
 <div class="cell border-box-sizing code_cell rendered">
 
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
 <div class="output_wrapper">
 <div class="output">
 
@@ -2352,7 +2345,7 @@ test_save.db
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="load_data" class="doc_header"><code>load_data</code><a href="https://github.com/rickatx/message_response_pipeline/tree/master/message_response_pipeline/process_data.py#L13" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_data</code>(<strong><code>messages_filepath</code></strong>, <strong><code>categories_filepath</code></strong>)</p>
+<h4 id="load_data" class="doc_header"><code>load_data</code><a href="https://github.com/rickatx/message_response_pipeline/tree/master/message_response_pipeline/process_data.py#L14" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>load_data</code>(<strong><code>messages_filepath</code></strong>, <strong><code>categories_filepath</code></strong>)</p>
 </blockquote>
 <p>Load message and category data from the specified filepaths.</p>
 <p>Args:</p>
@@ -2371,6 +2364,13 @@ test_save.db
 
 </div>
 </div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}
@@ -2487,13 +2487,6 @@ test_save.db
     
 <div class="cell border-box-sizing code_cell rendered">
 
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
 <div class="output_wrapper">
 <div class="output">
 
@@ -2501,7 +2494,7 @@ test_save.db
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="clean_data" class="doc_header"><code>clean_data</code><a href="https://github.com/rickatx/message_response_pipeline/tree/master/message_response_pipeline/process_data.py#L29" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>clean_data</code>(<strong><code>df</code></strong>)</p>
+<h4 id="clean_data" class="doc_header"><code>clean_data</code><a href="https://github.com/rickatx/message_response_pipeline/tree/master/message_response_pipeline/process_data.py#L30" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>clean_data</code>(<strong><code>df</code></strong>)</p>
 </blockquote>
 <p>Clean the loaded messages and categories data.
 Convert 'categories' column string into a set of numeric columns, and remove duplicate rows.</p>
@@ -2520,6 +2513,13 @@ Convert 'categories' column string into a set of numeric columns, and remove dup
 
 </div>
 </div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}
@@ -2709,13 +2709,6 @@ Convert 'categories' column string into a set of numeric columns, and remove dup
     
 <div class="cell border-box-sizing code_cell rendered">
 
-</div>
-    {% endraw %}
-
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-
 <div class="output_wrapper">
 <div class="output">
 
@@ -2723,7 +2716,7 @@ Convert 'categories' column string into a set of numeric columns, and remove dup
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="get_engine" class="doc_header"><code>get_engine</code><a href="https://github.com/rickatx/message_response_pipeline/tree/master/message_response_pipeline/process_data.py#L68" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_engine</code>(<strong><code>database_filename</code></strong>)</p>
+<h4 id="get_engine" class="doc_header"><code>get_engine</code><a href="https://github.com/rickatx/message_response_pipeline/tree/master/message_response_pipeline/process_data.py#L69" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>get_engine</code>(<strong><code>database_filename</code></strong>)</p>
 </blockquote>
 <p>Return database engine given database filename.</p>
 
@@ -2748,7 +2741,7 @@ Convert 'categories' column string into a set of numeric columns, and remove dup
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="save_data" class="doc_header"><code>save_data</code><a href="https://github.com/rickatx/message_response_pipeline/tree/master/message_response_pipeline/process_data.py#L72" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>save_data</code>(<strong><code>df</code></strong>, <strong><code>engine</code></strong>)</p>
+<h4 id="save_data" class="doc_header"><code>save_data</code><a href="https://github.com/rickatx/message_response_pipeline/tree/master/message_response_pipeline/process_data.py#L73" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>save_data</code>(<strong><code>df</code></strong>, <strong><code>engine</code></strong>)</p>
 </blockquote>
 <p>Save the specified DataFrame as table 'CategorizedMessages' to specified database <code>engine</code>.</p>
 
@@ -2758,6 +2751,13 @@ Convert 'categories' column string into a set of numeric columns, and remove dup
 
 </div>
 </div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
 
 </div>
     {% endraw %}
@@ -2797,6 +2797,56 @@ Convert 'categories' column string into a set of numeric columns, and remove dup
 </div>
 </div>
 </div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+
+        <span class="n">messages_filepath</span><span class="p">,</span> <span class="n">categories_filepath</span><span class="p">,</span> <span class="n">database_filepath</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Loading data...</span><span class="se">\n</span><span class="s1">    MESSAGES: </span><span class="si">{}</span><span class="se">\n</span><span class="s1">    CATEGORIES: </span><span class="si">{}</span><span class="s1">&#39;</span>
+              <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">messages_filepath</span><span class="p">,</span> <span class="n">categories_filepath</span><span class="p">))</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">messages_filepath</span><span class="p">,</span> <span class="n">categories_filepath</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cleaning data...&#39;</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">clean_data</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Saving data...</span><span class="se">\n</span><span class="s1">    DATABASE: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">database_filepath</span><span class="p">))</span>
+        <span class="n">engine</span> <span class="o">=</span> <span class="n">get_engine</span><span class="p">(</span><span class="n">database_filepath</span><span class="p">)</span>
+        <span class="n">save_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">engine</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cleaned data saved to database!&#39;</span><span class="p">)</span>
+    
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Please provide the filepaths of the messages and categories &#39;</span>\
+              <span class="s1">&#39;datasets as the first and second argument respectively, as &#39;</span>\
+              <span class="s1">&#39;well as the filepath of the database to save the cleaned data &#39;</span>\
+              <span class="s1">&#39;to as the third argument. </span><span class="se">\n\n</span><span class="s1">Example: python process_data.py &#39;</span>\
+              <span class="s1">&#39;disaster_messages.csv disaster_categories.csv &#39;</span>\
+              <span class="s1">&#39;DisasterResponse.db&#39;</span><span class="p">)</span>
+
+        
+<span class="c1"># Don&#39;t run main() when this cell is run in a notebook; use try so exported module</span>
+<span class="c1"># has no dependency on nbdev</span>
+<span class="k">try</span><span class="p">:</span> <span class="kn">from</span> <span class="nn">nbdev.imports</span> <span class="kn">import</span> <span class="n">IN_NOTEBOOK</span>
+<span class="k">except</span><span class="p">:</span> <span class="n">IN_NOTEBOOK</span><span class="o">=</span><span class="kc">False</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">IN_NOTEBOOK</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
 </div>
  
 

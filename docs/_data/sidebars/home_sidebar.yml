@@ -14,7 +14,7 @@ entries:
       url: ETL_Pipeline_Preparation.html
     - output: web,pdf
       title: ML Pipeline Preparation
-      url: ML Pipeline Preparation.html
+      url: ML_Pipeline_Preparation.html
     output: web
     title: message_response_pipeline
   output: web
