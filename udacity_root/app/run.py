@@ -37,31 +37,63 @@ model = joblib.load("../models/classifier.pkl")
 @app.route('/')
 @app.route('/index')
 def index():
+    #
+    # #xtract data needed for visuals
+    #
     
-    # extract data needed for visuals
-    # TODO: Below is an example - modify to extract data for your own visuals
-    genre_counts = df.groupby('genre').count()['message']
-    genre_names = list(genre_counts.index)
-    genre_counts = list(genre_counts)
+    # Distribution of message categorization status
+    # -- Frequency of number of per-message categorizations
+    categ_counts = df.loc[:, 'related':].sum(axis=1).value_counts().sort_index()
+    # -- Bar plot value
+    categ_status_names = ['Unrelated', 'Related, No Categ', 'Categorized']
+    categ_status_counts = [categ_counts[0], categ_counts[1], categ_counts[2:].sum()]
+    total_counts = sum(categ_status_counts)
+    pct_text = [f'  {(100*x/total_counts):.1f}% of Total' for x in categ_status_counts]
     
-    # create visuals
-    # TODO: Below is an example - modify to create your own visuals
+    # Counts of applications of category tags to messages
+    num_categorizations = df.loc[:, 'request':].sum(axis=0)
+    num_categorizations = num_categorizations.sort_values(ascending=False)
+    category_names = num_categorizations.index
+    categ_applied_count = num_categorizations.values
+    
+    # create 
     graphs = [
         {
             'data': [
                 Bar(
-                    x=genre_names,
-                    y=genre_counts
+                    x=categ_status_names,
+                    y=categ_status_counts,
+                    hovertext=pct_text
                 )
             ],
 
             'layout': {
-                'title': 'Distribution of Message Genres',
+                'title': 'Distribution of Message Categorization Status',
                 'yaxis': {
                     'title': "Count"
                 },
                 'xaxis': {
-                    'title': "Genre"
+                    'title': "Status"
+                }
+            }
+        },
+        {
+            'data': [
+                Bar(
+                    x=category_names,
+                    y=categ_applied_count
+                )
+            ],
+
+            'layout': {
+                'title': 'Category Tag Application Counts',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Category",
+                    'tickangle': 33,
+                    'automargin': "true"
                 }
             }
         }
