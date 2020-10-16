@@ -19,6 +19,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.multioutput import MultiOutputClassifier
+from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
@@ -87,7 +88,7 @@ def build_model(estimators=150):
         'rfc__estimator__min_samples_split': [2, 3],
     }
 
-    return GridSearchCV(pipeline, param_grid=cv_params, cv=3)
+    return GridSearchCV(pipeline, param_grid=cv_params, cv=3, verbose=1)
 
 # Cell
 
