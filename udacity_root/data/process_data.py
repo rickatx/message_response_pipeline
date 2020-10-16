@@ -55,6 +55,10 @@ def clean_data(df):
         # convert column from string to numeric
         categories[column] = categories[column].astype(int)
 
+    # related column has values (0, 1, 2)
+    # encode all non-related entries as 0, so we have 1 for related, 0 for non-related
+    categories.related = categories.related.replace(2, 0)
+
     # replace original category string values with numeric columns
     df = df.drop('categories', axis=1)
 

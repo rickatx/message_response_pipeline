@@ -55,6 +55,8 @@ lemmatizer = WordNetLemmatizer()
 url_regex = 'http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+'
 
 def tokenize(text):
+    """Convert a text string to a list of tokens.
+    """
     # convert urls to url token
     text = re.sub(url_regex, 'zzurl', text)
 
@@ -78,9 +80,14 @@ def build_model(estimators=150):
         ('rfc', MultiOutputClassifier(RandomForestClassifier(), n_jobs=2))
     ])
 
-    return pipeline.set_params(text_features__ngram_range=(1, 2),
-                               rfc__estimator__n_estimators=estimators,
-                               rfc__estimator__min_samples_split=3)
+    # Parameters for grid search
+    cv_params = {
+        'text_features__ngram_range': ((1, 2),),
+        'rfc__estimator__n_estimators': [100, 150],
+        'rfc__estimator__min_samples_split': [2, 3],
+    }
+
+    return GridSearchCV(pipeline, param_grid=cv_params, cv=3)
 
 # Cell
 
@@ -104,7 +111,7 @@ def evaluate_model(trained_model, x_test, y_test):
 # Cell
 
 def save_model(model, model_filepath):
-    """Save the trained model, `model` to the specified path, `filepath`."""
+    """Save the trained model, `model` to the specified path, `model_filepath`."""
     joblib.dump(model, model_filepath)
 
 # Internal Cell
